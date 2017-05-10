@@ -1,12 +1,31 @@
 <div class='panel panel-primary'>
     <div class='panel-heading' style='font-size: large'>
-        Test
+        Orders
     </div>
-    <div class='panel-body'>
-        Test
+
+    <div class='panel-body' *ngIf='errorMessage'>
+        <div class='has-error'>{{errorMessage}}</div>
     </div>
+
+    <div class="table-responsive">
+        <table class="table" *ngIf='orders && orders.length'>
+            <thead>
+                <tr>
+                    <th>Order Date</th>
+                    <th>Total Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let order of orders'>
+                    <td>{{order.orderDate}}</td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
     <div class='panel-footer'>
-        Test
+        Orders from the client
     </div>
 
 </div>
